@@ -170,4 +170,4 @@ console.log('Total Months: ' + finances.length);
 console.log("Total: $" + sum);
 console.log("Average Change " + averageChange);
 console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + " $" +"(" + MonthGreatestIncrease +")");
-console.log("Greatest decreace in Profits/Losses: " + greatestDecreaseDate + " $" +"(" + MonthGreatestcrease +")");
+console.log("Greatest decreace in Profits/Losses: " + greatestDecreaseDate + " $" +"(" + MonthGreatestDecrease +")");

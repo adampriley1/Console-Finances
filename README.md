@@ -39,11 +39,11 @@ N/A
 
 ## Usage
 
-Website for visitors to understand more about Adam Riley's skillset
+Code to analyse the finances in the provided dataset 
 
 Application Link:
 
-https://adampriley1.github.io/Bootstrap-Portfolio/
+https://adampriley1.github.io/Console-Finances/
 
 
 
