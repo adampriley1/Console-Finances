@@ -123,8 +123,9 @@ averageChange = averageChange.toFixed(2);
 // 4. The greatest increase in Profit/Losses (date and amount) over the entire period. ($1926159)
 
 //Get difference of  month 0 (current month) vs month 1 (next month) and store amount as avariable (monthDiffrence)
-//If monthDifference greater than monthGreatestDifference, then replace monthGreatestDifference with figure
+//If monthDifference greater than monthGreatestDifference, then replace monthGreatestDifference with this figure
 //If Compare MonthGreatestDiffrence less than < current month vs next month, then update MonthGreatestDiffernce variable
+
 
 var MonthGreatestIncrease = 0
 var Monthdifference = 0
@@ -161,13 +162,6 @@ for (var i = 1; i < finances.length; i++) {
     var greatestDecreaseDate = finances[i][0]
   }
 }
-
-
-//how to print month associated with month greatest increase???
-// console.log ('month below');
-// console.log (MonthGreatestIncrease);
-
-
 //console log
 
 console.log("Financial Analysis"); 
