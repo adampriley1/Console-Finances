@@ -91,19 +91,10 @@ var finances = [
 
 
 // 2. code to calculate the total profit / loss 
-var total = 0;
+
 for (var i = 0; i < finances.length; i++) {
-  total += finances[i][1];
+  sum += finances[i][1];
 }
-
-
-
-//change total profit / loss output to currency
-var currency = new Intl.NumberFormat("en-uk",{
-currency: "GBP",
-Style: "currency",
-})
-//
 
 //3.Average of changes 
 
@@ -122,10 +113,10 @@ for (var i = 1; i < finances.length; i++) {
 
   difference = currentMonth - previousMonth;
   totalDifference += difference;
-  }
+}
 
-  averageChange = totalDifference / (finances.length -1);
-  averageChange = averageChange.toFixed(2);
+averageChange = totalDifference / (finances.length - 1);
+averageChange = averageChange.toFixed(2);
 
 
 
@@ -141,38 +132,42 @@ var Monthdifference = 0
 for (var i = 1; i < finances.length; i++) {
   var currentMonth = finances[i][1];
   var previousMonth = finances[i - 1][1];
-  
+
 
 
   Monthdifference = currentMonth - previousMonth;
 
   if (Monthdifference > MonthGreatestIncrease) {
     MonthGreatestIncrease = Monthdifference
-    }
   }
+}
 
-  // 5. The greatest decrease in Profit/Losses (date and amount) over the entire period.
+// 5. The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
-  var MonthGreatestDecrease = 0
-var Monthlydifference = 0
+var MonthGreatestDecrease = 0
+var Monthdifference = 0
 
-
-for (var i = 0; i < finances.length; i++) {
+for (var i = 1; i < finances.length; i++) {
   var currentMonth = finances[i][1];
-  var nextMonth = finances [1][1];
+  var previousMonth = finances[i - 1][1];
 
-  MonthlyDifference = currentMonth - nextMonth;
+  Monthdifference = currentMonth - previousMonth;
 
-  if (Monthlydifference < MonthGreatestDecrease) {
-    MonthGreatestDecrease = Monthlydifference
-    }
+  if (Monthdifference < MonthGreatestDecrease) {
+    MonthGreatestDecrease = Monthdifference
   }
-  
+}
+
+//how to pring month associated with month greates increase???
+console.log ([i] + MonthGreatestIncrease)
+
 
 //console log
 
-console.log ('Financial Analysis');
-console.log ('------------------');
-console.log ('Total Months: '+ finances.length);
-console.log ('Average Change ' + averageChange);
-console.log ('Greatest increace ' + MonthGreatestIncrease);
+console.log('Financial Analysis');
+console.log('------------------');
+console.log('Total Months: ' + finances.length);
+console.log('Total: $' + sum);
+console.log('Average Change ' + averageChange);
+console.log('Greatest increace $' + MonthGreatestIncrease);
+console.log('Greatest decreace $' + MonthGreatestDecrease);
