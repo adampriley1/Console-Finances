@@ -28,10 +28,11 @@ Financial Analysis
   Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
   Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
 
-Screenshot:
-!(screenshot/screenshot1.png "Screenshot of javascript")
-!(screenshot/screenshot2.png "Screenshot of javascript")
-!(screenshot/screenshot3.png "Screenshot of javascript")
+Screenshots of code created:
+
+![Alt text](screenshot/Screenshot1.png)
+![Alt text](screenshot/Screenshot2.png)
+![Alt text](screenshot/Screenshot3.png)
 
 ## Installation
 
