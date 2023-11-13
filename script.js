@@ -88,32 +88,91 @@ var finances = [
   ['Feb-2017', 671099],
 ]
 
-// code to calculate the total profit / loss 
+
+
+// 2. code to calculate the total profit / loss 
 var total = 0;
 for (var i = 0; i < finances.length; i++) {
   total += finances[i][1];
 }
+
+
 
 //change total profit / loss output to currency
 var currency = new Intl.NumberFormat("en-uk",{
 currency: "GBP",
 Style: "currency",
 })
+//
 
-//Average of changes
-var Average = 0;
+//3.Average of changes 
+
+//current month = 2nd in list (1), previous month = 1st in list 0 (i-1)
+//calculate current month = previous month
+//add this difference to a total difference
+// the average will be the total differece divided by the number of months
+
+var difference = 0
+var totalDifference = 0
+var averageChange = 0
+
+for (var i = 1; i < finances.length; i++) {
+  var currentMonth = finances[i][1];
+  var previousMonth = finances[i - 1][1];
+
+  difference = currentMonth - previousMonth;
+  totalDifference += difference;
+  }
+
+  averageChange = totalDifference / (finances.length -1);
+  averageChange = averageChange.toFixed(2);
+
+
+
+// 4. The greatest increase in Profit/Losses (date and amount) over the entire period. ($1926159)
+
+//Get difference of  month 0 (current month) vs month 1 (next month) and store amount as avariable (monthDiffrence)
+//If monthDifference greater than monthGreatestDifference, then replace monthGreatestDifference with figure
+//If Compare MonthGreatestDiffrence less than < current month vs next month, then update MonthGreatestDiffernce variable
+
+var MonthGreatestIncrease = 0
+var Monthdifference = 0
+
+for (var i = 1; i < finances.length; i++) {
+  var currentMonth = finances[i][1];
+  var previousMonth = finances[i - 1][1];
+  
+
+
+  Monthdifference = currentMonth - previousMonth;
+
+  if (Monthdifference > MonthGreatestIncrease) {
+    MonthGreatestIncrease = Monthdifference
+    }
+  }
+
+  // 5. The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+  var MonthGreatestDecrease = 0
+var Monthlydifference = 0
+
 
 for (var i = 0; i < finances.length; i++) {
-  
-}
+  var currentMonth = finances[i][1];
+  var nextMonth = finances [1][1];
 
+  MonthlyDifference = currentMonth - nextMonth;
+
+  if (Monthlydifference < MonthGreatestDecrease) {
+    MonthGreatestDecrease = Monthlydifference
+    }
+  }
+  
 
 //console log
 
 console.log ('Financial Analysis');
 console.log ('------------------');
 console.log ('Total Months: '+ finances.length);
-console.log ('Total: £' + currency.format(total));
-
-
- 
+console.log ('Average Change ' + averageChange);
+console.log ('Greatest increace ' + MonthGreatestIncrease);
