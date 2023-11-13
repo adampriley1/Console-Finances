@@ -139,6 +139,7 @@ for (var i = 1; i < finances.length; i++) {
 
   if (Monthdifference > MonthGreatestIncrease) {
     MonthGreatestIncrease = Monthdifference
+    var greatestIncreaseDate = finances[i][0]
   }
 }
 
@@ -150,24 +151,29 @@ var Monthdifference = 0
 for (var i = 1; i < finances.length; i++) {
   var currentMonth = finances[i][1];
   var previousMonth = finances[i - 1][1];
+  
 
   Monthdifference = currentMonth - previousMonth;
 
   if (Monthdifference < MonthGreatestDecrease) {
     MonthGreatestDecrease = Monthdifference
+    
+    var greatestDecreaseDate = finances[i][0]
   }
 }
 
-//how to pring month associated with month greates increase???
-console.log ([i] + MonthGreatestIncrease)
+
+//how to print month associated with month greatest increase???
+// console.log ('month below');
+// console.log (MonthGreatestIncrease);
 
 
 //console log
 
-console.log('Financial Analysis');
-console.log('------------------');
+console.log("Financial Analysis"); 
+console.log("------------------");
 console.log('Total Months: ' + finances.length);
-console.log('Total: $' + sum);
-console.log('Average Change ' + averageChange);
-console.log('Greatest increace $' + MonthGreatestIncrease);
-console.log('Greatest decreace $' + MonthGreatestDecrease);
+console.log("Total: $" + sum);
+console.log("Average Change " + averageChange);
+console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + " $" +"(" + MonthGreatestIncrease +")");
+console.log("Greatest decreace in Profits/Losses: " + greatestDecreaseDate + " $" +"(" + MonthGreatestcrease +")");
